@@ -3,7 +3,7 @@ pipeline {
   stages {
     stage('Build') {
       steps {
-        sh 'python schoologs/manage.py jenkins --enable-coverage'
+        sh 'python schoologs/manage.py runserver'
       }
     }
 
