@@ -3,7 +3,7 @@ pipeline {
   stages {
     stage('Build') {
       steps {
-        sh 'python manage.py jenkins --enable-coverage'
+        sh 'python schoologs/manage.py jenkins --enable-coverage'
       }
     }
 
@@ -11,19 +11,19 @@ pipeline {
       parallel {
         stage('Admin App') {
           steps {
-            sh 'python manage.py test admins'
+            sh 'python schoologs/manage.py test admins'
           }
         }
 
         stage('Students App') {
           steps {
-            sh 'python manage.py test students'
+            sh 'python schoologs/manage.py test students'
           }
         }
 
         stage('Teachers App') {
           steps {
-            sh 'python manage.py test teachers'
+            sh 'python schoologs/manage.py test teachers'
           }
         }
 
